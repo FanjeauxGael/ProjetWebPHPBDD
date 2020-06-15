@@ -4,63 +4,9 @@
 <!-- MENU DE NAVIGATION -->
     <ul class="nav menu">
 
-    <?php
-    // ======================== RESPONSABLE LEGAL ========================== //
-    if (isset($_SESSION['mail_resp_leg'])){
-        ?>
-
-    <!-- PROFIL UTILISATEUR DANS NAVNAR -->
-    <div class="profile-sidebar">
-        <div class="profile-userpic">
-            <img src="../img/responsable.ico" class="img-responsive" alt="">
-        </div>
-        <div class="profile-usertitle">
-            <div class="profile-usertitle-name"><?php echo "". $responsable_legal->getPrenom_resp_leg() . " ". $responsable_legal->getNom_resp_leg() . "";?></div>
-            <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-        </div>
-        <div class="clear"></div>
-    </div>
-
-    <div class="divider"></div>
-        
-        <!-- ESPACE RESPONSABLE LEGAL -->
-        <li><a href="../espace_responsable/espace_resp_leg.php"><em class="fas fa-home">&nbsp;</em> My space</a></li>
-
-        <!-- INSCRIPTION D'UN MINEUR -->
-        <li><a href="../espace_responsable/register_adh_mineur.php"><em class="fas fa-user-plus">&nbsp;</em> Register</a></li>
-
-        <!-- DECONNEXION -->
-        <li><a href="../deconnexion.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
-    
-    <?php
-    // ========================== MAJEUR ============================= //   
-    }elseif(isset($_SESSION['mail_inscrit'])){
-        ?>
-        
-        <!-- PROFIL UTILISATEUR DANS NAVNAR -->
-        <div class="profile-sidebar">
-            <div class="profile-userpic">
-                <img src="../img/majeur.ico" class="img-responsive" alt="">
-            </div>
-            <div class="profile-usertitle">
-                <div class="profile-usertitle-name"><?php echo $adherent->getPrenom_adh() . ' ' . $adherent->getNom_adh() ;?></div>
-                <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <!-- ESPACE MAJEUR -->
-        <li><a href="../espace_majeur/espace_adh.php"><em class="fas fa-home">&nbsp;</em> My space</a></li>
-        
-        <!-- BORDEREAU MAJEUR -->
-        <li><a href="../espace_majeur/list_borderaux.php"><em class="fas fa-file-alt">&nbsp;</em> My Cars</a></li>
-
-        <!-- DECONNEXION -->
-        <li><a href="../deconnexion.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
-
         <?php
         // ========================== TRESORIER ============================== //
-    }elseif(isset($_SESSION['mail_tresorier'])){
+    if(isset($_SESSION['mail_tresorier'])){
         ?>
 
         <!-- PROFIL VISITEUR DANS NAVNAR -->
@@ -109,17 +55,7 @@
             </a>
             <ul class="children collapse" id="sub-item-1">
 
-                <!-- CONNEXION TRESORIER -->
-                <li><a class="" href="login/connexion_tresorier.php">
-                    <span class="fa fa-arrow-right">&nbsp;</span> Location
-                </a></li>
-
-                <!-- CONNEXION RESPONSABLE -->
-                <li><a class="" href="login/connexion_resp_leg.php">
-                    <span class="fa fa-arrow-right">&nbsp;</span> Cars
-                </a></li>
-
-                <!-- CONNEXION MAJEUR -->
+                <!-- CONNEXION ADHERENT -->
                 <li><a class="" href="login/connexion_adh.php">
                     <span class="fa fa-arrow-right">&nbsp;</span> My cars
                 </a></li>
@@ -132,12 +68,7 @@
             </a>
             <ul class="children collapse" id="sub-item-2">
 
-                <!-- INSCRIPTION RESPONSABLE -->
-                <li><a class="" href="register/register_resp_leg.php">
-                    <span class="fa fa-arrow-right">&nbsp;</span> Professional
-                </a></li>
-
-                <!-- INSCRIPTION MAJEUR -->
+                <!-- INSCRIPTION ADHERENT -->
                 <li><a class="" href="register/register_adh.php">
                     <span class="fa fa-arrow-right">&nbsp;</span> Particular
                 </a></li>
